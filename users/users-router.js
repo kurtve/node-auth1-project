@@ -6,7 +6,7 @@ const router = express.Router();
 
 const restricted = () => {
   const errorMessage = {
-    message: 'Invalid credentials',
+    message: 'You shall not pass!',
   };
 
   return async (req, res, next) => {

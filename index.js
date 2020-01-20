@@ -35,6 +35,7 @@ const defaultPage = `
 
 const server = express();
 server.use(helmet());
+server.use(cors());
 server.use(express.json());
 
 // default 'proof of life' endpoint
