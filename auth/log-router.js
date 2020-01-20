@@ -15,11 +15,11 @@ router.post('/', async (req, res, next) => {
 
     if (user && isValid) {
       res.status(200).json({
-        message: `Welcome ${user.username}!`,
+        message: `Logged in as ${user.username}!`,
       });
     } else {
       res.status(401).json({
-        message: 'Invalid Credentials',
+        message: 'You shall not pass!',
       });
     }
   } catch (err) {
