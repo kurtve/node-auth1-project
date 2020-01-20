@@ -2,6 +2,11 @@
 
 const express = require('express');
 const helmet = require('helmet');
+const cors = require('cors');
+
+const regRouter = require('./auth/reg-router.js');
+const logRouter = require('./auth/log-router.js');
+const usersRouter = require('./users/users-router.js');
 
 const port = process.env.PORT || 5000;
 
@@ -36,6 +41,15 @@ server.use(express.json());
 server.get('/', (req, res, next) => {
   res.send(defaultPage);
 });
+
+// api/register: register a new user
+server.use('/api/register', regRouter);
+
+// api/login: log in as an existing user
+server.use('/api/login', logRouter);
+
+// users: get user info
+server.use('/api/users', usersRouter);
 
 // catch-all error handler
 server.use((err, req, res, next) => {
