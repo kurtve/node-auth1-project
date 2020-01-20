@@ -16,6 +16,7 @@ const defaultPage = `
         <h1>Hello, Server!</h1>
         <h3>Available endpoints:</h3>
         <ul>
+            <li>/api/register</li>
             <li>/api/login</li>
             <li>/api/users</li>
         </ul>
